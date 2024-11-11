@@ -1,4 +1,4 @@
-namespace kpu.Services
+namespace KpuRegion.Services
 {
     public interface IDataService
     {

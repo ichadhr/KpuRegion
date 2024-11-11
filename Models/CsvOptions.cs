@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace kpu.Models
+namespace KpuRegion.Models
 {
     public class CsvOptions
     {

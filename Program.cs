@@ -1,9 +1,10 @@
 ﻿using System.Diagnostics;
 using kpu.Services;
-using kpu.Helpers;
-using kpu.Models;
+using KpuRegion.Services;
+using KpuRegion.Models;
+using KpuRegion.Helpers;
 
-namespace kpu
+namespace KpuRegion
 {
     class Program
     {
@@ -17,7 +18,7 @@ namespace kpu
         {
             var sw = Stopwatch.StartNew();
             using var cts = new CancellationTokenSource();
-            
+
             Logger.LogInfo("Application started.");
 
             try
@@ -95,7 +96,7 @@ namespace kpu
                         await _semaphore.WaitAsync(cancellationToken);
                         try
                         {
-                            await WithRetry<string>(async () =>
+                            await WithRetry(async () =>
                             {
                                 if (string.IsNullOrEmpty(record.kode))
                                 {
@@ -155,7 +156,7 @@ namespace kpu
         }
 
         private static Task WithRetry(Func<Task> action, int maxRetries = MAX_RETRIES)
-            => WithRetry<string>(async () =>
+            => WithRetry(async () =>
             {
                 await action();
                 return string.Empty;

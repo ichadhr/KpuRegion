@@ -1,7 +1,7 @@
 using System.Text;
-using kpu.Models;
+using KpuRegion.Models;
 
-namespace kpu.Helpers
+namespace KpuRegion.Helpers
 {
     public class CsvConverter
     {
@@ -13,7 +13,7 @@ namespace kpu.Helpers
             try
             {
                 var sb = new StringBuilder(options.InitialBufferSize);
-                
+
                 // Write header only if file doesn't exist and header is requested
                 bool fileExists = File.Exists(filename);
                 if (!fileExists && options.IncludeHeader)
@@ -26,17 +26,17 @@ namespace kpu.Helpers
                     if (options.IgnoreNullValues && (obj.kode == null || obj.nama == null))
                         continue;
 
-                    string nama = options.CapitalizeExceptRoman ? 
-                        StringExtensions.CapitalizeExceptRoman(obj.nama ?? "") : 
+                    string nama = options.CapitalizeExceptRoman ?
+                        StringExtensions.CapitalizeExceptRoman(obj.nama ?? "") :
                         obj.nama ?? "";
 
                     sb.AppendLine($"\"{obj.kode}\",\"{nama}\"");
                 }
 
                 // Use FileMode.Append for existing files
-                using (var fileStream = new FileStream(filename, 
-                    fileExists ? FileMode.Append : FileMode.Create, 
-                    FileAccess.Write, 
+                using (var fileStream = new FileStream(filename,
+                    fileExists ? FileMode.Append : FileMode.Create,
+                    FileAccess.Write,
                     FileShare.None))
                 using (var writer = new StreamWriter(fileStream, options.Encoding))
                 {
@@ -59,7 +59,7 @@ namespace kpu.Helpers
         public static IEnumerable<ObjectJson> ReadCsv(string filename, int bufferSize)
         {
             using var reader = new StreamReader(filename, Encoding.UTF8, true, bufferSize);
-        
+
             // Skip header
             reader.ReadLine();
 

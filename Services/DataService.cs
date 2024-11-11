@@ -1,9 +1,9 @@
-using kpu.Models;
-using kpu.Helpers;
 using System.Text;
 using System.Text.Json;
+using KpuRegion.Models;
+using KpuRegion.Helpers;
 
-namespace kpu.Services
+namespace KpuRegion.Services
 {
     public class DataService : IDataService
     {
@@ -19,7 +19,7 @@ namespace kpu.Services
             Logger.LogInfo("Getting data provinsi.");
             try
             {
-            return await FetchAndProcessData("0.json", AppSettings.FileNames.FILENAME_PROVINSI, true);
+                return await FetchAndProcessData("0.json", AppSettings.FileNames.FILENAME_PROVINSI, true);
             }
             catch (Exception ex)
             {

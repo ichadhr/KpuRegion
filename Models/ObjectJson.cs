@@ -1,4 +1,4 @@
-namespace kpu.Models
+namespace KpuRegion.Models
 {
     public class ObjectJson
     {

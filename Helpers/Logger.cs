@@ -1,4 +1,4 @@
-namespace kpu.Helpers
+namespace KpuRegion.Helpers
 {
     public static class Logger
     {

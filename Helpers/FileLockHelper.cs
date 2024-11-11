@@ -1,20 +1,21 @@
-namespace kpu.Helpers;
-
-public static class FileLockHelper
+namespace KpuRegion.Helpers
 {
-    private static readonly Dictionary<string, SemaphoreSlim> _fileLocks = [];
-    private static readonly object _lockObject = new();
-
-    public static SemaphoreSlim GetLock(string filename)
+    public static class FileLockHelper
     {
-        lock (_lockObject)
+        private static readonly Dictionary<string, SemaphoreSlim> _fileLocks = [];
+        private static readonly object _lockObject = new();
+
+        public static SemaphoreSlim GetLock(string filename)
         {
-            if (!_fileLocks.TryGetValue(filename, out var semaphore))
+            lock (_lockObject)
             {
-                semaphore = new SemaphoreSlim(1, 1);
-                _fileLocks[filename] = semaphore;
+                if (!_fileLocks.TryGetValue(filename, out var semaphore))
+                {
+                    semaphore = new SemaphoreSlim(1, 1);
+                    _fileLocks[filename] = semaphore;
+                }
+                return semaphore;
             }
-            return semaphore;
         }
     }
 }

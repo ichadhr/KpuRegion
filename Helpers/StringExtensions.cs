@@ -1,7 +1,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace kpu.Helpers
+namespace KpuRegion.Helpers
 {
     public static partial class StringExtensions
     {
