@@ -1,0 +1,515 @@
+﻿id,nama,kode,tingkat
+191126,Aceh Barat,1105,2
+191133,Aceh Barat Daya,1112,2
+191127,Aceh Besar,1106,2
+191135,Aceh Jaya,1114,2
+100055,Aceh Selatan,1101,2
+191131,Aceh Singkil,1110,2
+191137,Aceh Tamiang,1116,2
+191125,Aceh Tengah,1104,2
+191123,Aceh Tenggara,1102,2
+191124,Aceh Timur,1103,2
+191129,Aceh Utara,1108,2
+191138,Bener Meriah,1117,2
+191132,Bireuen,1111,2
+191134,Gayo Lues,1113,2
+191140,Kota Banda Aceh,1171,2
+191143,Kota Langsa,1174,2
+191142,Kota Lhokseumawe,1173,2
+191141,Kota Sabang,1172,2
+191144,Kota Subulussalam,1175,2
+191136,Nagan Raya,1115,2
+191128,Pidie,1107,2
+191139,Pidie Jaya,1118,2
+191130,Simeulue,1109,2
+191402,Badung,5103,2
+191405,Bangli,5106,2
+191407,Buleleng,5108,2
+191403,Gianyar,5104,2
+155006,Jembrana,5101,2
+191406,Karangasem,5107,2
+191404,Klungkung,5105,2
+191408,Kota Denpasar,5171,2
+191401,Tabanan,5102,2
+191373,Kota Cilegon,3672,2
+191374,Kota Serang,3673,2
+191368,Kota Tangerang,3671,2
+191375,Kota Tangerang Selatan,3674,2
+191370,Lebak,3602,2
+191369,Pandeglang,3601,2
+191372,Serang,3604,2
+191371,Tangerang,3603,2
+191235,Bengkulu Selatan,1701,2
+191243,Bengkulu Tengah,1709,2
+191237,Bengkulu Utara,1703,2
+191238,Kaur,1704,2
+191242,Kepahiang,1708,2
+191244,Kota Bengkulu,1771,2
+191241,Lebong,1707,2
+191240,Muko Muko,1706,2
+191236,Rejang Lebong,1702,2
+191239,Seluma,1705,2
+191327,Bantul,3402,2
+191328,Gunungkidul,3403,2
+191330,Kota Yogyakarta,3471,2
+143631,Kulon Progo,3401,2
+191329,Sleman,3404,2
+127558,Adm. Kep. Seribu,3101,2
+191267,Kota Adm. Jakarta Barat,3173,2
+191265,Kota Adm. Jakarta Pusat,3171,2
+191268,Kota Adm. Jakarta Selatan,3174,2
+191269,Kota Adm. Jakarta Timur,3175,2
+191266,Kota Adm. Jakarta Utara,3172,2
+191145,Boalemo,7502,2
+191146,Bone Bolango,7503,2
+178815,Gorontalo,7501,2
+191148,Gorontalo Utara,7505,2
+191149,Kota Gorontalo,7571,2
+191147,Pohuwato,7504,2
+191593,Kerinci,1501,2
+191594,Merangin,1502,2
+191595,Muaro Jambi,1505,2
+191208,Batanghari,1504,2
+191211,Bungo,1508,2
+191213,Kota Jambi,1571,2
+191214,Kota Sungai Penuh,1572,2
+191207,Sarolangun,1503,2
+191209,Tanjung Jabung Barat,1506,2
+191210,Tanjung Jabung Timur,1507,2
+191212,Tebo,1509,2
+191272,Bandung,3204,2
+191285,Bandung Barat,3217,2
+191284,Bekasi,3216,2
+127885,Bogor,3201,2
+191275,Ciamis,3207,2
+191271,Cianjur,3203,2
+191277,Cirebon,3209,2
+191273,Garut,3205,2
+191281,Indramayu,3212,2
+191283,Karawang,3215,2
+191289,Kota Bandung,3273,2
+134462,Kota Banjar,3279,2
+191291,Kota Bekasi,3275,2
+191287,Kota Bogor,3271,2
+191292,Kota Cimahi,3277,2
+191290,Kota Cirebon,3274,2
+191279,Kota Depok,3276,2
+191288,Kota Sukabumi,3272,2
+191293,Kota Tasikmalaya,3278,2
+191276,Kuningan,3208,2
+191278,Majalengka,3210,2
+191286,Pangandaran,3218,2
+191282,Purwakarta,3214,2
+132551,Subang,3213,2
+191270,Sukabumi,3202,2
+191280,Sumedang,3211,2
+191274,Tasikmalaya,3206,2
+191296,Banjarnegara,3304,2
+191294,Banyumas,3302,2
+191316,Batang,3325,2
+191308,Blora,3316,2
+191301,Boyolali,3309,2
+191320,Brebes,3329,2
+134463,Cilacap,3301,2
+191312,Demak,3321,2
+191307,Grobogan,3315,2
+191311,Jepara,3320,2
+191305,Karanganyar,3313,2
+191297,Kebumen,3305,2
+191315,Kendal,3324,2
+191302,Klaten,3310,2
+191321,Kota Magelang,3371,2
+191325,Kota Pekalongan,3375,2
+191323,Kota Salatiga,3373,2
+191324,Kota Semarang,3374,2
+191322,Kota Surakarta,3372,2
+191326,Kota Tegal,3376,2
+191310,Kudus,3319,2
+191300,Magelang,3308,2
+139944,Pati,3318,2
+191317,Pekalongan,3326,2
+191318,Pemalang,3327,2
+191295,Purbalingga,3303,2
+191298,Purworejo,3306,2
+191309,Rembang,3317,2
+191313,Semarang,3322,2
+191306,Sragen,3314,2
+191303,Sukoharjo,3311,2
+191319,Tegal,3328,2
+191314,Temanggung,3323,2
+191304,Wonogiri,3312,2
+191299,Wonosobo,3307,2
+191355,Bangkalan,3526,2
+191339,Banyuwangi,3510,2
+145121,Blitar,3505,2
+191351,Bojonegoro,3522,2
+191340,Bondowoso,3511,2
+191354,Gresik,3525,2
+191338,Jember,3509,2
+191346,Jombang,3517,2
+191335,Kediri,3506,2
+191367,Kota Batu,3579,2
+191360,Kota Blitar,3572,2
+191359,Kota Kediri,3571,2
+191365,Kota Madiun,3577,2
+191361,Kota Malang,3573,2
+191364,Kota Mojokerto,3576,2
+191363,Kota Pasuruan,3575,2
+191362,Kota Probolinggo,3574,2
+191366,Kota Surabaya,3578,2
+191353,Lamongan,3524,2
+191337,Lumajang,3508,2
+191348,Madiun,3519,2
+191349,Magetan,3520,2
+191336,Malang,3507,2
+191345,Mojokerto,3516,2
+191347,Nganjuk,3518,2
+191350,Ngawi,3521,2
+191331,Pacitan,3501,2
+191357,Pamekasan,3528,2
+191343,Pasuruan,3514,2
+191332,Ponorogo,3502,2
+191342,Probolinggo,3513,2
+191356,Sampang,3527,2
+191344,Sidoarjo,3515,2
+191341,Situbondo,3512,2
+191358,Sumenep,3529,2
+191333,Trenggalek,3503,2
+191352,Tuban,3523,2
+191334,Tulungagung,3504,2
+191381,Bengkayang,6107,2
+191380,Kapuas Hulu,6106,2
+191385,Kayong Utara,6111,2
+191378,Ketapang,6104,2
+191387,Kota Pontianak,6171,2
+191388,Kota Singkawang,6172,2
+191386,Kubu Raya,6112,2
+191382,Landak,6108,2
+191384,Melawi,6110,2
+191376,Mempawah,6102,2
+160806,Sambas,6101,2
+191377,Sanggau,6103,2
+191383,Sekadau,6109,2
+191379,Sintang,6105,2
+191448,Balangan,6311,2
+191440,Banjar,6303,2
+191441,Barito Kuala,6304,2
+191443,Hulu Sungai Selatan,6306,2
+191444,Hulu Sungai Tengah,6307,2
+191445,Hulu Sungai Utara,6308,2
+191450,Kota Banjarbaru,6372,2
+191449,Kota Banjarmasin,6371,2
+191439,Kotabaru,6302,2
+191446,Tabalong,6309,2
+191447,Tanah Bumbu,6310,2
+164831,Tanah Laut,6301,2
+191442,Tapin,6305,2
+191391,Barito Selatan,6204,2
+191400,Barito Timur,6213,2
+191392,Barito Utara,6205,2
+191397,Gunung Mas,6210,2
+191390,Kapuas,6203,2
+191393,Katingan,6206,2
+164830,Kota Palangkaraya,6271,2
+163157,Kotawaringin Barat,6201,2
+191389,Kotawaringin Timur,6202,2
+191396,Lamandau,6209,2
+191399,Murung Raya,6212,2
+191398,Pulang Pisau,6211,2
+191394,Seruyan,6207,2
+191395,Sukamara,6208,2
+191452,Berau,6403,2
+191457,Kota Balikpapan,6471,2
+168174,Kota Bontang,6474,2
+191458,Kota Samarinda,6472,2
+191453,Kutai Barat,6407,2
+191451,Kutai Kartanegara,6402,2
+191454,Kutai Timur,6408,2
+191456,Mahakam Ulu,6411,2
+167006,Paser,6401,2
+191455,Penajam Paser Utara,6409,2
+168175,Bulungan,6501,2
+168683,Kota Tarakan,6571,2
+191459,Malinau,6502,2
+191460,Nunukan,6503,2
+191461,Tana Tidung,6504,2
+126661,Bangka,1901,2
+191262,Bangka Barat,1905,2
+191260,Bangka Selatan,1903,2
+191261,Bangka Tengah,1904,2
+191259,Belitung,1902,2
+191263,Belitung Timur,1906,2
+191264,Kota Pangkal Pinang,1971,2
+121936,Bintan,2101,2
+191231,Karimun,2102,2
+191234,Kepulauan Anambas,2105,2
+191230,Kota Batam,2171,2
+127557,Kota Tanjung Pinang,2172,2
+191233,Lingga,2104,2
+191232,Natuna,2103,2
+191258,Kota Bandar Lampung,1871,2
+126660,Kota Metro,1872,2
+191248,Lampung Barat,1804,2
+191245,Lampung Selatan,1801,2
+191246,Lampung Tengah,1802,2
+191251,Lampung Timur,1807,2
+191247,Lampung Utara,1803,2
+191255,Mesuji,1811,2
+191253,Pesawaran,1809,2
+191257,Pesisir Barat,1813,2
+191254,Pringsewu,1810,2
+191250,Tanggamus,1806,2
+191249,Tulang Bawang,1805,2
+191256,Tulang Bawang Barat,1812,2
+191252,Way Kanan,1808,2
+191536,Buru,8104,2
+191541,Buru Selatan,8109,2
+191539,Kepulauan Aru,8107,2
+191535,Kepulauan Tanimbar,8103,2
+191542,Kota Ambon,8171,2
+191543,Kota Tual,8172,2
+191540,Maluku Barat Daya,8108,2
+180295,Maluku Tengah,8101,2
+191534,Maluku Tenggara,8102,2
+191538,Seram Bagian Barat,8106,2
+191537,Seram Bagian Timur,8105,2
+191545,Halmahera Barat,8201,2
+191548,Halmahera Selatan,8204,2
+191546,Halmahera Tengah,8202,2
+191550,Halmahera Timur,8206,2
+191547,Halmahera Utara,8203,2
+191549,Kepulauan Sula,8205,2
+191544,Kota Ternate,8271,2
+191553,Kota Tidore Kepulauan,8272,2
+191551,Pulau Morotai,8207,2
+191552,Pulau Taliabu,8208,2
+191415,Bima,5206,2
+191414,Dompu,5205,2
+191413,Kota Bima,5272,2
+191411,Kota Mataram,5271,2
+155798,Lombok Barat,5201,2
+191409,Lombok Tengah,5202,2
+191410,Lombok Timur,5203,2
+191417,Lombok Utara,5208,2
+191412,Sumbawa,5204,2
+191416,Sumbawa Barat,5207,2
+191421,Alor,5305,2
+191420,Belu,5304,2
+191424,Ende,5308,2
+191422,Flores Timur,5306,2
+191418,Kab Timor Tengah Selatan,5302,2
+191438,Kota Kupang,5371,2
+157047,Kupang,5301,2
+191429,Lembata,5313,2
+191437,Malaka,5321,2
+191426,Manggarai,5310,2
+191431,Manggarai Barat,5315,2
+191435,Manggarai Timur,5319,2
+191432,Nagekeo,5316,2
+191425,Ngada,5309,2
+191430,Rote Ndao,5314,2
+191436,Sabu Raijua,5320,2
+191423,Sikka,5307,2
+191428,Sumba Barat,5312,2
+191434,Sumba Barat Daya,5318,2
+191433,Sumba Tengah,5317,2
+191427,Sumba Timur,5311,2
+191419,Timor Tengah Utara,5303,2
+191555,Biak Numfor,9106,2
+182979,Jayapura,9103,2
+191557,Keerom,9111,2
+191554,Kepulauan Yapen,9105,2
+191561,Kota Jayapura,9171,2
+191560,Mamberamo Raya,9120,2
+191556,Sarmi,9110,2
+191559,Supiori,9119,2
+191558,Waropen,9115,2
+191562,Fak Fak,9203,2
+191565,Kaimana,9208,2
+184069,Manokwari,9202,2
+191566,Manokwari Selatan,9211,2
+191567,Pegunungan Arfak,9212,2
+191563,Teluk Bintuni,9206,2
+191564,Teluk Wondama,9207,2
+191586,Kota Sorong,9671,2
+191585,Maybrat,9605,2
+191583,Raja Ampat,9603,2
+189958,Sorong,9601,2
+191582,Sorong Selatan,9602,2
+191584,Tambrauw,9604,2
+187122,Jayawijaya,9501,2
+191575,Kab Pegunungan Bintang,9502,2
+191580,Lanny Jaya,9507,2
+191578,Mamberamo Tengah,9505,2
+191581,Nduga,9508,2
+191577,Tolikara,9504,2
+191576,Yahukimo,9503,2
+191579,Yalimo,9506,2
+191533,Asmat,9304,2
+191531,Boven Digoel,9302,2
+191532,Mappi,9303,2
+177622,Merauke,9301,2
+191574,Deiyai,9408,2
+191572,Dogiyai,9406,2
+191573,Intan Jaya,9407,2
+191570,Mimika,9404,2
+185797,Nabire,9401,2
+191569,Paniai,9403,2
+191571,Puncak,9405,2
+191568,Puncak Jaya,9402,2
+191590,Pelalawan,1405,2
+191592,Rokan Hilir,1407,2
+191591,Rokan Hulu,1406,2
+191200,Bengkalis,1403,2
+191201,Indragiri Hilir,1404,2
+191199,Indragiri Hulu,1402,2
+114827,Kampar,1401,2
+191204,Kepulauan Meranti,1410,2
+191206,Kota Dumai,1472,2
+191205,Kota Pekanbaru,1471,2
+191203,Kuantan Singingi,1409,2
+191202,Siak,1408,2
+191529,Majene,7605,2
+191527,Mamasa,7603,2
+191526,Mamuju,7602,2
+191530,Mamuju Tengah,7606,2
+191525,Pasangkayu,7601,2
+191528,Polewali Mandar,7604,2
+191490,Bantaeng,7303,2
+191497,Barru,7311,2
+191494,Bone,7308,2
+191489,Bulukumba,7302,2
+191501,Enrekang,7316,2
+191492,Gowa,7306,2
+191491,Jeneponto,7304,2
+172930,Kepulauan Selayar,7301,2
+191507,Kota Makassar,7371,2
+191509,Kota Palopo,7373,2
+191508,Kota Parepare,7372,2
+191502,Luwu,7317,2
+191505,Luwu Timur,7324,2
+191504,Luwu Utara,7322,2
+191495,Maros,7309,2
+191496,Pangkajene Dan Kepulauan,7310,2
+191500,Pinrang,7315,2
+191499,Sidenreng Rappang,7314,2
+191493,Sinjai,7307,2
+191498,Soppeng,7312,2
+173379,Takalar,7305,2
+191503,Tana Toraja,7318,2
+191506,Toraja Utara,7326,2
+174509,Wajo,7313,2
+170707,Banggai,7201,2
+191482,Banggai Kepulauan,7207,2
+191486,Banggai Laut,7211,2
+191480,Buol,7205,2
+191478,Donggala,7203,2
+191488,Kota Palu,7271,2
+191481,Morowali,7206,2
+191487,Morowali Utara,7212,2
+191483,Parigi Moutong,7208,2
+191477,Poso,7202,2
+191485,Sigi,7210,2
+191484,Tojo Una Una,7209,2
+191479,Toli Toli,7204,2
+191514,Bombana,7406,2
+191512,Buton,7404,2
+191522,Buton Selatan,7415,2
+191521,Buton Tengah,7414,2
+191517,Buton Utara,7410,2
+176256,Kolaka,7401,2
+191518,Kolaka Timur,7411,2
+191516,Kolaka Utara,7408,2
+191511,Konawe,7402,2
+191519,Konawe Kepulauan,7412,2
+191513,Konawe Selatan,7405,2
+191510,Konawe Utara,7409,2
+191524,Kota Bau Bau,7472,2
+191523,Kota Kendari,7471,2
+176825,Muna,7403,2
+191520,Muna Barat,7413,2
+191515,Wakatobi,7407,2
+191462,Bolaang Mongondow,7101,2
+191472,Bolaang Mongondow Selatan,7111,2
+191471,Bolaang Mongondow Timur,7110,2
+191469,Bolaang Mongondow Utara,7108,2
+191470,Kep. Siau Tagulandang Biaro,7109,2
+191463,Kepulauan Sangihe,7103,2
+191465,Kepulauan Talaud,7104,2
+191474,Kota Bitung,7172,2
+191476,Kota Kotamobagu,7174,2
+191473,Kota Manado,7171,2
+191475,Kota Tomohon,7173,2
+191464,Minahasa,7102,2
+191466,Minahasa Selatan,7105,2
+191468,Minahasa Tenggara,7107,2
+191467,Minahasa Utara,7106,2
+191185,Agam,1306,2
+191189,Dharmasraya,1310,2
+191188,Kepulauan Mentawai,1309,2
+191196,Kota Bukittinggi,1375,2
+191192,Kota Padang,1371,2
+191195,Kota Padang Panjang,1374,2
+191198,Kota Pariaman,1377,2
+191197,Kota Payakumbuh,1376,2
+191194,Kota Sawahlunto,1373,2
+191193,Kota Solok,1372,2
+191186,Lima Puluh Kota,1307,2
+191184,Padang Pariaman,1305,2
+191187,Pasaman,1308,2
+191191,Pasaman Barat,1312,2
+113400,Pesisir Selatan,1301,2
+191182,Sijunjung,1303,2
+191181,Solok,1302,2
+191190,Solok Selatan,1311,2
+191183,Tanah Datar,1304,2
+191219,Banyuasin,1607,2
+191223,Empat Lawang,1611,2
+191228,Kota Lubuk Linggau,1673,2
+191227,Kota Pagar Alam,1672,2
+191226,Kota Palembang,1671,2
+191229,Kota Prabumulih,1674,2
+119377,Lahat,1604,2
+191217,Muara Enim,1603,2
+191215,Musi Banyuasin,1606,2
+191218,Musi Rawas,1605,2
+191225,Musi Rawas Utara,1613,2
+191222,Ogan Ilir,1610,2
+191216,Ogan Komering Ilir,1602,2
+118596,Ogan Komering Ulu,1601,2
+191221,Ogan Komering Ulu Selatan,1609,2
+191220,Ogan Komering Ulu Timur,1608,2
+191224,Penukal Abab Lematang Ilir,1612,2
+191156,Asahan,1209,2
+191166,Batu Bara,1219,2
+191158,Dairi,1211,2
+191154,Deli Serdang,1207,2
+191163,Humbang Hasundutan,1216,2
+108070,Karo,1206,2
+191177,Kota Binjai,1275,2
+191180,Kota Gunungsitoli,1278,2
+191173,Kota Medan,1271,2
+191179,Kota Padang Sidempuan,1277,2
+191174,Kota Pematangsiantar,1272,2
+191175,Kota Sibolga,1273,2
+191176,Kota Tanjung Balai,1274,2
+191178,Kota Tebing Tinggi,1276,2
+191157,Labuhanbatu,1210,2
+191169,Labuhanbatu Selatan,1222,2
+191170,Labuhanbatu Utara,1223,2
+191153,Langkat,1205,2
+191160,Mandailing Natal,1213,2
+191152,Nias,1204,2
+191172,Nias Barat,1225,2
+191161,Nias Selatan,1214,2
+191171,Nias Utara,1224,2
+191168,Padang Lawas,1221,2
+191167,Padang Lawas Utara,1220,2
+191162,Pakpak Bharat,1215,2
+191164,Samosir,1217,2
+191165,Serdang Bedagai,1218,2
+191155,Simalungun,1208,2
+191151,Tapanuli Selatan,1203,2
+106849,Tapanuli Tengah,1201,2
+191150,Tapanuli Utara,1202,2
+191159,Toba,1212,2
