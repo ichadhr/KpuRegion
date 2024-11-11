@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
-using kpu.Services;
 using KpuRegion.Services;
 using KpuRegion.Models;
 using KpuRegion.Helpers;
+using Spectre.Console;
 
 namespace KpuRegion
 {
@@ -10,19 +10,24 @@ namespace KpuRegion
     {
         private static readonly IDataService _dataService = new DataService();
         private static readonly SemaphoreSlim _semaphore = new(AppSettings.Configuration.MAX_CONCURRENT_TASKS);
-        private const int PROGRESS_LOG_INTERVAL = 10;
         private const int MAX_RETRIES = 3;
         private const int BATCH_SIZE = 100;
+
+        private static readonly List<(string FileName, string EntityName, Func<string, Task> ProcessFunc)> _processConfigs = new()
+        {
+            (AppSettings.FileNames.FILENAME_PROVINSI, "Kabupaten/Kota", _dataService.GetKabkotData),
+            (AppSettings.FileNames.FILENAME_KABKOT, "Kecamatan", _dataService.GetKecamatanData),
+            (AppSettings.FileNames.FILENAME_KECAMATAN, "Kelurahan", _dataService.GetKelurahanData)
+        };
 
         static async Task Main()
         {
             var sw = Stopwatch.StartNew();
             using var cts = new CancellationTokenSource();
 
-            Logger.LogInfo("Application started.");
-
             try
             {
+                Logger.LogInfo("Getting data provinsi.");
                 string dataProvinsi = await WithRetry(() => _dataService.GetProvinsiData());
                 if (string.IsNullOrEmpty(dataProvinsi))
                 {
@@ -30,24 +35,11 @@ namespace KpuRegion
                     return;
                 }
 
-                // Process hierarchical data
-                await ProcessRegionalData(
-                    AppSettings.FileNames.FILENAME_PROVINSI,
-                    "Kabupaten/Kota",
-                    _dataService.GetKabkotData,
-                    cts.Token);
-
-                await ProcessRegionalData(
-                    AppSettings.FileNames.FILENAME_KABKOT,
-                    "Kecamatan",
-                    _dataService.GetKecamatanData,
-                    cts.Token);
-
-                await ProcessRegionalData(
-                    AppSettings.FileNames.FILENAME_KECAMATAN,
-                    "Kelurahan",
-                    _dataService.GetKelurahanData,
-                    cts.Token);
+                foreach (var config in _processConfigs)
+                {
+                    Logger.LogInfo($"Getting data {config.EntityName.ToLower()}.");
+                    await ProcessRegionalData(config.FileName, config.EntityName, config.ProcessFunc, cts.Token);
+                }
             }
             catch (OperationCanceledException)
             {
@@ -74,61 +66,65 @@ namespace KpuRegion
         {
             try
             {
-                Logger.LogInfo($"Starting {entityName} processing...");
-
-                // Read and filter records
-                var records = await Task.Run(() =>
-                    CsvConverter.ReadCsv(fileName, AppSettings.Configuration.BUFFER_SIZE)
-                        .Where(r => !string.IsNullOrEmpty(r.kode))
-                        .ToList(),
-                    cancellationToken);
+                var records = await AnsiConsole.Status()
+                    .Spinner(Spinner.Known.Dots)
+                    .SpinnerStyle(Style.Parse("green"))
+                    .StartAsync($"Reading {entityName} data...", async ctx =>
+                    {
+                        return await Task.Run(() =>
+                            CsvConverter.ReadCsv(fileName, AppSettings.Configuration.BUFFER_SIZE)
+                                .Where(r => !string.IsNullOrEmpty(r.kode))
+                                .ToList(),
+                            cancellationToken);
+                    });
 
                 var totalCount = records.Count;
                 var processedCount = 0;
 
-                // Process in batches
-                foreach (var batch in records.Chunk(BATCH_SIZE))
-                {
-                    cancellationToken.ThrowIfCancellationRequested();
-
-                    var batchTasks = batch.Select(async record =>
+                await AnsiConsole.Progress()
+                    .AutoClear(true)
+                    .HideCompleted(false)
+                    .Columns(
+                    [
+                        new TaskDescriptionColumn(),
+                        new ProgressBarColumn(),
+                        new PercentageColumn(),
+                        new SpinnerColumn(),
+                    ])
+                    .StartAsync(async ctx =>
                     {
-                        await _semaphore.WaitAsync(cancellationToken);
-                        try
+                        var task = ctx.AddTask($"Processing {entityName}", maxValue: totalCount);
+
+                        foreach (var batch in records.Chunk(BATCH_SIZE))
                         {
-                            await WithRetry(async () =>
+                            cancellationToken.ThrowIfCancellationRequested();
+
+                            var batchTasks = batch.Select(async record =>
                             {
-                                if (string.IsNullOrEmpty(record.kode))
+                                await _semaphore.WaitAsync(cancellationToken);
+                                try
                                 {
-                                    Logger.LogWarning($"Skipping {entityName} processing - empty kode found");
-                                    return string.Empty;
+                                    await WithRetry(async () =>
+                                    {
+                                        if (!string.IsNullOrEmpty(record.kode))
+                                        {
+                                            await processFunction(record.kode!);
+                                            Interlocked.Increment(ref processedCount);
+                                            task.Increment(1);
+                                        }
+                                    });
                                 }
-
-                                await processFunction(record.kode!);
-                                var count = Interlocked.Increment(ref processedCount);
-
-                                if (count % PROGRESS_LOG_INTERVAL == 0)
+                                finally
                                 {
-                                    Logger.LogInfo($"{entityName} Progress: {count}/{totalCount}");
+                                    _semaphore.Release();
                                 }
-                                return string.Empty;
                             });
-                        }
-                        catch (Exception ex)
-                        {
-                            Logger.LogError($"Error processing {entityName} for kode {record.kode}: {ex.Message}");
-                            throw;
-                        }
-                        finally
-                        {
-                            _semaphore.Release();
+
+                            await Task.WhenAll(batchTasks);
                         }
                     });
 
-                    await Task.WhenAll(batchTasks);
-                }
-
-                Logger.LogInfo($"Completed {entityName} processing. Total processed: {processedCount}");
+                Logger.LogInfo($"✅ Completed {entityName} processing. Total processed: {processedCount:N0} records");
             }
             catch (Exception ex)
             {
@@ -155,11 +151,13 @@ namespace KpuRegion
             return await action();
         }
 
-        private static Task WithRetry(Func<Task> action, int maxRetries = MAX_RETRIES)
-            => WithRetry(async () =>
+        private static async Task<string> WithRetry(Func<Task> action, int maxRetries = MAX_RETRIES)
+        {
+            return await WithRetry(async () =>
             {
                 await action();
                 return string.Empty;
             }, maxRetries);
+        }
     }
 }

@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# ignore ouput file
+kabupaten_kota.csv
+kecamatan.csv
+provinsi.csv

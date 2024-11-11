@@ -16,7 +16,7 @@ namespace KpuRegion.Services
 
         public async Task<string> GetProvinsiData()
         {
-            Logger.LogInfo("Getting data provinsi.");
+            
             try
             {
                 return await FetchAndProcessData("0.json", AppSettings.FileNames.FILENAME_PROVINSI, true);
@@ -31,8 +31,6 @@ namespace KpuRegion.Services
 
         public async Task<string> GetKabkotData(string kode)
         {
-            Logger.LogInfo("Getting data kabupaten/kota.");
-
             var fileLock = FileLockHelper.GetLock(AppSettings.FileNames.FILENAME_KABKOT);
             await fileLock.WaitAsync();
             try
@@ -48,8 +46,6 @@ namespace KpuRegion.Services
 
         public async Task<string> GetKecamatanData(string kode)
         {
-            Logger.LogInfo("Getting data kecamatan.");
-
             var fileLock = FileLockHelper.GetLock(AppSettings.FileNames.FILENAME_KECAMATAN);
             await fileLock.WaitAsync();
             try
@@ -65,8 +61,6 @@ namespace KpuRegion.Services
 
         public async Task<string> GetKelurahanData(string kode)
         {
-            Logger.LogInfo("Getting data kelurahan.");
-
             var fileLock = FileLockHelper.GetLock(AppSettings.FileNames.FILENAME_KELURAHAN);
             await fileLock.WaitAsync();
             try
@@ -85,7 +79,8 @@ namespace KpuRegion.Services
             try
             {
                 string jsonUri = AppSettings.Endpoints.URI_JSON_KPU + path;
-                Logger.LogInfo($"Fetching data from URI: {jsonUri}");
+                // Logger.LogInfo($"Fetching data from URI:");
+                // await Logger.LogProgressAsync($"{jsonUri}");
 
                 string jsonData = await FetchJsonDataAsync(jsonUri);
                 if (string.IsNullOrWhiteSpace(jsonData))

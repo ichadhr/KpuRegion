@@ -1,1 +1,1 @@
-# Fetch Indonesia region data from KPU portal
+# Fetch Indonesia regions data from KPU portal
