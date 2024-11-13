@@ -7,7 +7,7 @@ namespace KpuRegion.Helpers
     {
         private static readonly SemaphoreSlim _fileLock = new(1, 1);
 
-        public static async Task<string> SaveToCsvAsync(List<ObjectJson> objects, string filename, CsvOptions options)
+        public static async Task<string> SaveToCsvAsync(List<RegionalRecord> objects, string filename, CsvOptions options)
         {
             await _fileLock.WaitAsync();
             try
@@ -56,7 +56,7 @@ namespace KpuRegion.Helpers
             }
         }
 
-        public static IEnumerable<ObjectJson> ReadCsv(string filename, int bufferSize)
+        public static IEnumerable<RegionalRecord> ReadCsv(string filename, int bufferSize)
         {
             using var reader = new StreamReader(filename, Encoding.UTF8, true, bufferSize);
 
@@ -71,7 +71,7 @@ namespace KpuRegion.Helpers
                 var parts = line.Split(',');
                 if (parts.Length >= 2)
                 {
-                    yield return new ObjectJson
+                    yield return new RegionalRecord
                     {
                         kode = parts[0].Trim('"'),
                         nama = parts[1].Trim('"')

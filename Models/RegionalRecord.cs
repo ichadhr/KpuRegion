@@ -1,6 +1,6 @@
 namespace KpuRegion.Models
 {
-    public class ObjectJson
+    public class RegionalRecord
     {
         public string? kode { get; set; }
         public string? nama { get; set; }

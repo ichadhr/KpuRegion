@@ -89,7 +89,7 @@ namespace KpuRegion.Services
                     return string.Empty;
                 }
 
-                var objects = JsonSerializer.Deserialize<List<ObjectJson>>(jsonData);
+                var objects = JsonSerializer.Deserialize<List<RegionalRecord>>(jsonData);
                 if (objects?.Count > 0)
                 {
                     if (excludeLuarNegeri)
