@@ -119,9 +119,9 @@ namespace KpuRegion
             await _fileSemaphore.WaitAsync(cancellationToken);
             try
             {
-                var provinsiRecords = CsvConverter.ReadCsv(csvFilePath, AppSettings.Configuration.BUFFER_SIZE);
+                var provinsiRecords = await CsvConverter.ReadBufferedAsync(csvFilePath);
                 _totalAllData.Add(new KeyValuePair<string, int>(entityName, provinsiRecords.Count()));
-                Logger.LogInfo($"✅ Completed {entityName} processing. Total processed: {provinsiRecords.Count():N0} records");
+                Logger.LogInfo($"✅ Completed {entityName} processing. Total processed: {provinsiRecords.Count:N0} records");
             }
             finally
             {
