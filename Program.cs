@@ -122,8 +122,6 @@ namespace KpuRegion
                 var provinsiRecords = CsvConverter.ReadCsv(csvFilePath, AppSettings.Configuration.BUFFER_SIZE);
                 _totalAllData.Add(new KeyValuePair<string, int>(entityName, provinsiRecords.Count()));
                 Logger.LogInfo($"✅ Completed {entityName} processing. Total processed: {provinsiRecords.Count():N0} records");
-                Table summary = SummaryTable(_totalAllData);
-                AnsiConsole.Write(summary);
             }
             finally
             {
@@ -221,8 +219,8 @@ namespace KpuRegion
             await _fileSemaphore.WaitAsync(cancellationToken);
             try
             {
-                var appendedRecords = CsvConverter.ReadCsv(lastCsvPath, AppSettings.Configuration.BUFFER_SIZE);
-                var totalProcessed = appendedRecords.Count();
+                var appendedRecords = await CsvConverter.ReadBufferedAsync(lastCsvPath);
+                var totalProcessed = appendedRecords.Count;
                 _totalAllData.Add(new KeyValuePair<string, int>(entityName, totalProcessed));
                 Logger.LogInfo($"✅ Completed {entityName}. Total data: {totalProcessed:N0} records");
             }

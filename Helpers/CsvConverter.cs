@@ -79,5 +79,46 @@ namespace KpuRegion.Helpers
                 }
             }
         }
+
+        public static async Task<List<RegionalRecord>> ReadBufferedAsync(string path)
+        {
+            var records = new List<RegionalRecord>();
+
+            if (!File.Exists(path))
+            {
+                // Handle the case where the file does not exist
+                throw new FileNotFoundException("The specified CSV file was not found.");
+            }
+            using (var reader = new StreamReader(path))
+            {
+                string? line;
+                while ((line = await reader.ReadLineAsync()) != null)
+                {
+                    if (string.IsNullOrWhiteSpace(line)) // Check for empty or whitespace lines
+                    {
+                        continue; // Skip processing of empty or whitespace lines
+                    }
+                    // Process each line to create a record object and add it to the list
+                    var record = ConvertLineToRecord(line);
+                    records.Add(record);
+                }
+            }
+            return records;
+        }
+
+        private static RegionalRecord ConvertLineToRecord(string line)
+        {
+            // Implement your logic to convert a line into a record object
+            var parts = line.Split(','); // Example split logic
+            if (parts.Length < 2)
+            {
+                throw new InvalidDataException("Each line must contain at least two columns.");
+            }
+            return new RegionalRecord
+            {
+                kode = parts[0].Trim('"'),
+                nama = parts[1].Trim('"')
+            };
+        }
     }
 }
